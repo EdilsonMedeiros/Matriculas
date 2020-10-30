@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import br.com.matriculas.model.Funcionario;
 import br.com.matriculas.model.Professor;
 
 public class DaoProfessor {
-	public void inserirProfessor(Professor prof) {
+	public static void inserirProfessor(Professor prof) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +25,7 @@ public class DaoProfessor {
 				sessao.close();
 			}
 			
-			public void excluirProfessor(Professor prof) {
+			public static void excluirProfessor(Professor prof) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +42,7 @@ public class DaoProfessor {
 				sessao.close();
 			}
 			
-			public void editarProfessor(Professor prof) {
+			public static void editarProfessor(Professor prof) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +59,7 @@ public class DaoProfessor {
 				sessao.close();
 			}
 			
-			public List<Professor> listarProfessor() {
+			public static List<Professor> listarProfessor() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 
@@ -70,5 +71,15 @@ public class DaoProfessor {
 				return lista;
 			}
 
+			public static Professor localizarProfessorPorCodigo(int id){
+				Session sessao = ConexaoBD.getSessionFactory().openSession();
+				sessao.beginTransaction();
 
+				Professor obj = (Professor) sessao.createQuery("FROM Professor WHERE id = " + id).uniqueResult();
+				
+				sessao.getTransaction().commit();
+				sessao.close();
+
+				return obj;
+			}
 }

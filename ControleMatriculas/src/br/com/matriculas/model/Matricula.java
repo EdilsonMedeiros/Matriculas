@@ -2,20 +2,26 @@ package br.com.matriculas.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Matricula {
+	@Id
+	@GeneratedValue
+	private int id;
 	@Enumerated
 	private StatusMatricula statusmatricula;
 	private Date dataMatricula;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private Aluno Aluno;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private Funcionario funcionario;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private Turma turma;
 	
 	public Matricula() {
@@ -30,6 +36,15 @@ public class Matricula {
 		Aluno = aluno;
 		this.funcionario = funcionario;
 		this.turma = turma;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public StatusMatricula getStatusmatricula() {

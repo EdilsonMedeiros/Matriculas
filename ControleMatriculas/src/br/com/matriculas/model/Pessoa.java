@@ -2,6 +2,7 @@ package br.com.matriculas.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -20,7 +21,7 @@ public abstract class Pessoa {
 	private String email;
 	private String telefone1;
 	private String telefone2;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private Endereco endereco;
 	
 	public Pessoa() {

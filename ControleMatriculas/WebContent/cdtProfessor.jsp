@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <fieldset>
    <legend>Cadastrar Um Novo Professor</legend>
-<form action="#">
+<form action="inputProfessor.jsp">
 	<label for="sNomeProf">Nome</label>
 	<input type="text" name="nomeProf" id="sNomeProf" size="30" maxlength="40"/><br/>
 	<label for="sCpfProf">CPF</label>
@@ -24,7 +24,7 @@
 	<label for="sTitulacaoProf">Titulação</label>
 	<input type="text" name="titulacaoProf" id="sTitulacaoProf" size="20" maxlength="30"/><br/>
 	<label for="sFormacaoProf">Área de Formação</label>
-	<input type="text" name="FormacaoProf" id="sFormacaoProf" size="20" maxlength="30"/><br/>
+	<input type="text" name="formacaoProf" id="sFormacaoProf" size="20" maxlength="30"/><br/>
 	<fieldset>
 	<input type="radio" id="masculino" name="genero" value="masculino">
   	<label for="masculino">Masculino</label>
@@ -45,7 +45,7 @@
 	<input type="text" name="cidadeProf" id="sCidadeProf" size="20" maxlength="40"/><br/>
 	<label for="sEstadoProf">Estado</label>
 	<input type="text" name="estadoProf" id="sEstadoProf" size="20" maxlength="40"/><br/>
-	<label for="sPaisProf">Estado</label>
+	<label for="sPaisProf">País</label>
 	<input type="text" name="paisProf" id="sPaisProf" size="10" maxlength="20"/><br/>	
 	</fieldset>
 	<button type="submit">Salvar</button>

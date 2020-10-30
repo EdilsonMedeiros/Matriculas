@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import br.com.matriculas.model.Matricula;
 
 public class DaoMatricula {
-	public void inserirMatricula(Matricula matri) {
+	public static void inserirMatricula(Matricula matri) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +24,7 @@ public class DaoMatricula {
 				sessao.close();
 			}
 			
-			public void excluirMatricula(Matricula matri) {
+			public static void excluirMatricula(Matricula matri) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +41,7 @@ public class DaoMatricula {
 				sessao.close();
 			}
 			
-			public void editarMatricula(Matricula matri) {
+			public static void editarMatricula(Matricula matri) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +58,7 @@ public class DaoMatricula {
 				sessao.close();
 			}
 			
-			public List<Matricula> listarMatricula() {
+			public static List<Matricula> listarMatricula() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 

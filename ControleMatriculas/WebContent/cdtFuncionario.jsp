@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 	<fieldset>
    <legend>Cadastrar Uma Novo Funcionário</legend>
-<form action="#">
+<form action="inputFuncionario.jsp">
 	<label for="sNomeFunc">Nome</label>
 	<input type="text" name="nomeFunc" id="sNomeFunc" size="30" maxlength="40"/><br/>
 	<label for="sCpfFunc">CPF</label>

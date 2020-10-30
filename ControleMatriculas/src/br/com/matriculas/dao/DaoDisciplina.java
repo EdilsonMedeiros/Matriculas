@@ -5,9 +5,10 @@ import java.util.List;
 import org.hibernate.Session;
 
 import br.com.matriculas.model.Disciplina;
+import br.com.matriculas.model.Funcionario;
 
 public class DaoDisciplina {
-	public void inserirDisciplina(Disciplina disc) {
+	public static void inserirDisciplina(Disciplina disc) {
 	// 1. Abrir conexão
 			Session sessao = ConexaoBD.getSessionFactory().openSession();
 			
@@ -24,7 +25,7 @@ public class DaoDisciplina {
 			sessao.close();
 		}
 		
-		public void excluirDisciplina(Disciplina disc) {
+		public static void excluirDisciplina(Disciplina disc) {
 			// 1. Abrir conexão
 			Session sessao = ConexaoBD.getSessionFactory().openSession();
 			
@@ -41,7 +42,7 @@ public class DaoDisciplina {
 			sessao.close();
 		}
 		
-		public void editarDisciplina(Disciplina disc) {
+		public static void editarDisciplina(Disciplina disc) {
 			// 1. Abrir conexão
 			Session sessao = ConexaoBD.getSessionFactory().openSession();
 			
@@ -58,7 +59,7 @@ public class DaoDisciplina {
 			sessao.close();
 		}
 		
-		public List<Disciplina> listarDisciplina() {
+		public static List<Disciplina> listarDisciplina() {
 			Session sessao = ConexaoBD.getSessionFactory().openSession();
 			sessao.beginTransaction();
 
@@ -69,5 +70,15 @@ public class DaoDisciplina {
 			
 			return lista;
 		}
+		public static Disciplina localizarDisciplinaPorCodigo(int id){
+			Session sessao = ConexaoBD.getSessionFactory().openSession();
+			sessao.beginTransaction();
 
+			Disciplina obj = (Disciplina) sessao.createQuery("FROM Disciplina WHERE id = " + id).uniqueResult();
+			
+			sessao.getTransaction().commit();
+			sessao.close();
+
+			return obj;
+		}
 }

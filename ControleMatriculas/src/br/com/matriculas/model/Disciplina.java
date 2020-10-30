@@ -1,5 +1,6 @@
 package br.com.matriculas.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,9 +14,9 @@ public class Disciplina {
 	private String nome;
 	private int cargaHoraria;
 	private String ementa;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private Professor professor;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private Serie serie;
 	
 	public Disciplina() {

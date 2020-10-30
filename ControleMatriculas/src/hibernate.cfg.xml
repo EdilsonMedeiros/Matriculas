@@ -20,20 +20,20 @@
 	<!-- Use the Hibernate built-in pool for tests. -->
         <property name="connection.pool_size">3</property>
 		
-	<!--*********** Mapeamento das classes/tabelas ...  ***********-->        
-	<mapping class="br.com.matriculas.model.Pessoa"/>
-	<mapping class="br.com.matriculas.model.Disciplina"/> 
-	<mapping class="br.com.matriculas.model.Aluno"/> 
-	<mapping class="br.com.matriculas.model.Endereco"/> 
-	<mapping class="br.com.matriculas.model.Funcionario"/> 
-	<mapping class="br.com.matriculas.model.Matricula"/> 
-	<mapping class="br.com.matriculas.model.PeriodoLetivo"/> 
-	<mapping class="br.com.matriculas.model.Professor"/> 
-	<mapping class="br.com.matriculas.model.Responsavel"/>
-	<mapping class="br.com.matriculas.model.Serie"/>
-	<mapping class="br.com.matriculas.model.Turma"/>
-	<mapping class="br.com.matriculas.model.Usuario"/>     
+	<!--*********** Mapeamento das classes/tabelas ...  ***********-->
 	
+	<mapping class="br.com.matriculas.model.Endereco"/>         
+	<mapping class="br.com.matriculas.model.Pessoa"/>
+	<mapping class="br.com.matriculas.model.Responsavel"/>
+	<mapping class="br.com.matriculas.model.Aluno"/> 
+	<mapping class="br.com.matriculas.model.Funcionario"/>
+	<mapping class="br.com.matriculas.model.Usuario"/>
+	<mapping class="br.com.matriculas.model.Professor"/>  
+	<mapping class="br.com.matriculas.model.PeriodoLetivo"/>
+	<mapping class="br.com.matriculas.model.Serie"/> 
+	<mapping class="br.com.matriculas.model.Disciplina"/> 
+	<mapping class="br.com.matriculas.model.Turma"/>     
+	<mapping class="br.com.matriculas.model.Matricula"/> 
         
     </session-factory>
 

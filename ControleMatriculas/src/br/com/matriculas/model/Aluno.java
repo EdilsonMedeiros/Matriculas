@@ -1,11 +1,12 @@
 package br.com.matriculas.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Aluno extends Pessoa{
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private Responsavel responsavel;
 
 	public Aluno() {

@@ -6,7 +6,7 @@ import java.util.List;
 import br.com.matriculas.model.Aluno;
 
 public class DaoAluno {
-	public void inserirAluno(Aluno alun) {
+	public static void inserirAluno(Aluno alun) {
 		// 1. Abrir conexão
 		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		
@@ -23,7 +23,7 @@ public class DaoAluno {
 		sessao.close();
 	}
 	
-	public void excluirAluno(Aluno alun) {
+	public static void excluirAluno(Aluno alun) {
 		// 1. Abrir conexão
 		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		
@@ -40,7 +40,7 @@ public class DaoAluno {
 		sessao.close();
 	}
 	
-	public void editarAluno(Aluno alun) {
+	public static void editarAluno(Aluno alun) {
 		// 1. Abrir conexão
 		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		
@@ -57,7 +57,7 @@ public class DaoAluno {
 		sessao.close();
 	}
 	
-	public List<Aluno> listarAluno() {
+	public static List<Aluno> listarAluno() {
 		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		sessao.beginTransaction();
 

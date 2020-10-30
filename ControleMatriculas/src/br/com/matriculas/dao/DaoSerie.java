@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import br.com.matriculas.model.Professor;
 import br.com.matriculas.model.Serie;
 
 public class DaoSerie {
-	public void inserirSerie(Serie seri) {
+	public static void inserirSerie(Serie seri) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +25,7 @@ public class DaoSerie {
 				sessao.close();
 			}
 			
-			public void excluirSerie(Serie seri) {
+			public static void excluirSerie(Serie seri) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +42,7 @@ public class DaoSerie {
 				sessao.close();
 			}
 			
-			public void editarSerie(Serie seri) {
+			public static void editarSerie(Serie seri) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +59,7 @@ public class DaoSerie {
 				sessao.close();
 			}
 			
-			public List<Serie> listarSerie() {
+			public static List<Serie> listarSerie() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 
@@ -68,5 +69,16 @@ public class DaoSerie {
 				sessao.close();
 				
 				return lista;
+			}
+			public static Serie localizarSeriePorCodigo(int id){
+				Session sessao = ConexaoBD.getSessionFactory().openSession();
+				sessao.beginTransaction();
+
+				Serie obj = (Serie) sessao.createQuery("FROM Serie WHERE id = " + id).uniqueResult();
+				
+				sessao.getTransaction().commit();
+				sessao.close();
+
+				return obj;
 			}
 }

@@ -1,5 +1,6 @@
 package br.com.matriculas.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -15,9 +16,9 @@ public class Turma {
 	private int sala;
 	@Enumerated
 	private Turno turno;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private PeriodoLetivo periodoLetivo;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL )
 	private Serie serie;
 	
 	public Turma() {

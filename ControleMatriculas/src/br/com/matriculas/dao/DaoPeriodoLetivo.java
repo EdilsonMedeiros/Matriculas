@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import br.com.matriculas.model.Funcionario;
 import br.com.matriculas.model.PeriodoLetivo;
 
 public class DaoPeriodoLetivo {
-	public void inserirPeriodoLetivo(PeriodoLetivo pele) {
+	public static void inserirPeriodoLetivo(PeriodoLetivo pele) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +25,7 @@ public class DaoPeriodoLetivo {
 				sessao.close();
 			}
 			
-			public void excluirPeriodoLetivo(PeriodoLetivo pele) {
+			public static void excluirPeriodoLetivo(PeriodoLetivo pele) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +42,7 @@ public class DaoPeriodoLetivo {
 				sessao.close();
 			}
 			
-			public void editarPeriodoLetivo(PeriodoLetivo pele) {
+			public static void editarPeriodoLetivo(PeriodoLetivo pele) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +59,7 @@ public class DaoPeriodoLetivo {
 				sessao.close();
 			}
 			
-			public List<PeriodoLetivo> listarPeriodoLetivo() {
+			public static List<PeriodoLetivo> listarPeriodoLetivo() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 
@@ -68,6 +69,18 @@ public class DaoPeriodoLetivo {
 				sessao.close();
 				
 				return lista;
+			}
+			
+			public static PeriodoLetivo localizarPeriodoLetivoPorCodigo(int id){
+				Session sessao = ConexaoBD.getSessionFactory().openSession();
+				sessao.beginTransaction();
+
+				PeriodoLetivo obj = (PeriodoLetivo) sessao.createQuery("FROM PeriodoLetivo WHERE id = " + id).uniqueResult();
+				
+				sessao.getTransaction().commit();
+				sessao.close();
+
+				return obj;
 			}
 
 }

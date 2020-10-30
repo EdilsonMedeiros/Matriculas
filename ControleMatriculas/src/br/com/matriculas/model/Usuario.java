@@ -1,5 +1,6 @@
 package br.com.matriculas.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +13,7 @@ public class Usuario {
 	private int id;
 	private String usuario;
 	private String senha;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL )
 	private Funcionario funcionario;
 	
 	public Usuario() {

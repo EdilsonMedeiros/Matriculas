@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import br.com.matriculas.model.Turma;
 
 public class DaoTurma {
-	public void inserirTurma(Turma turm) {
+	public static void inserirTurma(Turma turm) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +24,7 @@ public class DaoTurma {
 				sessao.close();
 			}
 			
-			public void excluirTurma(Turma turm) {
+			public static void excluirTurma(Turma turm) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +41,7 @@ public class DaoTurma {
 				sessao.close();
 			}
 			
-			public void editarTurma(Turma turm) {
+			public static void editarTurma(Turma turm) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +58,7 @@ public class DaoTurma {
 				sessao.close();
 			}
 			
-			public List<Turma> listarTurma() {
+			public static List<Turma> listarTurma() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 

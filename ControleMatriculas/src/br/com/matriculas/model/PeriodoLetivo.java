@@ -31,7 +31,7 @@ public class PeriodoLetivo {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
 	public Date getDataInicio() {
 		return dataInicio;
 	}

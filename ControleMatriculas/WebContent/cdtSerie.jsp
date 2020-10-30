@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
    <fieldset>
    <legend>Cadastrar Uma Nova Série</legend>
-<form action="#">
+<form action="inputSerie.jsp" method="get">
 	<input type="text" name="cSerie" id="sSerie" maxlength="10"/>
 	<button type="submit">Salvar</button>
 	<button type="reset">Apagar</button>

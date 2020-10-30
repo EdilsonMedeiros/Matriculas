@@ -2,9 +2,9 @@ package br.com.matriculas.model;
 
 public enum Turno {
 	
-	MATUTINO("Matutino"),
-	VESPERTINO("Vespertino"),
-	NOTURNO("Noturno");
+	MATUTINO("matutino"),
+	VESPERTINO("vespertino"),
+	NOTURNO("noturno");
 	
 	private final String valor;
 	

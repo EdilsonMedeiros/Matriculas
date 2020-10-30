@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import br.com.matriculas.model.Responsavel;
 
 public class DaoResponsavel {
-	public void inserirResponsavel(Responsavel resp) {
+	public static void inserirResponsavel(Responsavel resp) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +24,7 @@ public class DaoResponsavel {
 				sessao.close();
 			}
 			
-			public void excluirResponsavel(Responsavel resp) {
+			public static void excluirResponsavel(Responsavel resp) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +41,7 @@ public class DaoResponsavel {
 				sessao.close();
 			}
 			
-			public void editarResponsavel(Responsavel resp) {
+			public static void editarResponsavel(Responsavel resp) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +58,7 @@ public class DaoResponsavel {
 				sessao.close();
 			}
 			
-			public List<Responsavel> listarResponsavel() {
+			public static List<Responsavel> listarResponsavel() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 

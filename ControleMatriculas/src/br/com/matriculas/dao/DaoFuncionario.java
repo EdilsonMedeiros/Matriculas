@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import br.com.matriculas.model.Funcionario;
 
 public class DaoFuncionario {
-	public void inserirFuncionario(Funcionario func) {
+	public static void inserirFuncionario(Funcionario func) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +24,7 @@ public class DaoFuncionario {
 				sessao.close();
 			}
 			
-			public void excluirFuncionario(Funcionario func) {
+			public static void excluirFuncionario(Funcionario func) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +41,7 @@ public class DaoFuncionario {
 				sessao.close();
 			}
 			
-			public void editarFuncionario(Funcionario func) {
+			public static void editarFuncionario(Funcionario func) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +58,7 @@ public class DaoFuncionario {
 				sessao.close();
 			}
 			
-			public List<Funcionario> listarFuncionario() {
+			public static List<Funcionario> listarFuncionario() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 
@@ -69,5 +69,16 @@ public class DaoFuncionario {
 				
 				return lista;
 			}
+			
+			public static Funcionario localizarFuncionarioPorCodigo(int id){
+				Session sessao = ConexaoBD.getSessionFactory().openSession();
+				sessao.beginTransaction();
 
+				Funcionario obj = (Funcionario) sessao.createQuery("FROM Funcionario WHERE id = " + id).uniqueResult();
+				
+				sessao.getTransaction().commit();
+				sessao.close();
+
+				return obj;
+			}
 }

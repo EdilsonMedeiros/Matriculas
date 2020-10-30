@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import br.com.matriculas.model.Endereco;
 
 public class DaoEndereco {
-	public void inserirEndereco(Endereco end) {
+	public static void inserirEndereco(Endereco end) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +24,7 @@ public class DaoEndereco {
 				sessao.close();
 			}
 			
-			public void excluirEndereco(Endereco end) {
+			public static void excluirEndereco(Endereco end) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +41,7 @@ public class DaoEndereco {
 				sessao.close();
 			}
 			
-			public void editarEndereco(Endereco end) {
+			public static void editarEndereco(Endereco end) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +58,7 @@ public class DaoEndereco {
 				sessao.close();
 			}
 			
-			public List<Endereco> listarEndereco() {
+			public static List<Endereco> listarEndereco() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 

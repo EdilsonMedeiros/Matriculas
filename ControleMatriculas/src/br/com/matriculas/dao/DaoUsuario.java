@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import br.com.matriculas.model.Usuario;
 
 public class DaoUsuario {
-	public void inserirUsuario(Usuario usu) {
+	public static void inserirUsuario(Usuario usu) {
 		// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -24,7 +24,7 @@ public class DaoUsuario {
 				sessao.close();
 			}
 			
-			public void excluirUsuario(Usuario usu) {
+			public static void excluirUsuario(Usuario usu) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -41,7 +41,7 @@ public class DaoUsuario {
 				sessao.close();
 			}
 			
-			public void editarUsuario(Usuario usu) {
+			public static void editarUsuario(Usuario usu) {
 				// 1. Abrir conexão
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				
@@ -58,7 +58,7 @@ public class DaoUsuario {
 				sessao.close();
 			}
 			
-			public List<Usuario> listarUsuario() {
+			public static List<Usuario> listarUsuario() {
 				Session sessao = ConexaoBD.getSessionFactory().openSession();
 				sessao.beginTransaction();
 
