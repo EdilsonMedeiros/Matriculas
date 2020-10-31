@@ -1,3 +1,4 @@
+<%@page import="javax.persistence.EnumType"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import ="br.com.matriculas.model.Turno"%>
@@ -19,17 +20,25 @@
 	<% 
 	int vagas = Integer.parseInt(request.getParameter("cVagas"));
 	int sala = Integer.parseInt(request.getParameter("cSala"));
-	Turno turno = Turno.valueOf(request.getParameter("seleTurno"));
+	String turno = request.getParameter("seleTurno");
 	int periodo = Integer.parseInt(request.getParameter("seleLetivo"));
 	int serie = Integer.parseInt(request.getParameter("seleSerie"));
 	
 	PeriodoLetivo peri = DaoPeriodoLetivo.localizarPeriodoLetivoPorCodigo(periodo);
 	Serie seri = DaoSerie.localizarSeriePorCodigo(serie);
 	
+		
+	
 	Turma turm = new Turma();
 	turm.setQtdVagas(vagas);
 	turm.setSala(sala);
-	turm.setTurno(turno);
+	if(Turno.MATUTINO.toString()==turno){
+	turm.setTurno(Turno.MATUTINO);
+	}else if(Turno.MATUTINO.toString()==turno){
+		turm.setTurno(Turno.VESPERTINO);
+		}else if(Turno.MATUTINO.toString()==turno){
+			turm.setTurno(Turno.NOTURNO);
+		}
 	turm.setPeriodoLetivo(peri);
 	turm.setSerie(seri);
 	

@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +15,7 @@ public class Matricula {
 	@Id
 	@GeneratedValue
 	private int id;
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private StatusMatricula statusmatricula;
 	private Date dataMatricula;
 	@ManyToOne(cascade = CascadeType.ALL )
