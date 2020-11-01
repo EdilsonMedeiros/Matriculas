@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import ="br.com.matriculas.model.StatusMatricula"%>
+    <%@page import ="br.com.matriculas.model.Turma"%>
+    <%@page import ="br.com.matriculas.dao.DaoTurma"%>
 <fieldset>
    <legend>Matrícula</legend>
-<form action="#">
+<form action="inputMatricula.jsp">
 	<label for="sNomeAluno">Nome do Aluno</label>
 	<input type="text" name="nomeAluno" id="sNomeAluno" size="30" maxlength="40"/><br/>
 	<label for="sCpfAluno">CPF</label>
@@ -26,13 +29,18 @@
   	<fieldset>
   	<label>Status da Matrícula</label>
   	<select name="seleStatus" id="StatusSele">
-		<option value=""></option>
+		<option value="<%=StatusMatricula.MATRICULADO.toString()%>"><%=StatusMatricula.MATRICULADO.toString()%></option>
+		<option value="<%=StatusMatricula.EXPULSO.toString()%>"><%=StatusMatricula.EXPULSO.toString()%></option>
+		<option value="<%=StatusMatricula.PENDENTE.toString()%>"><%=StatusMatricula.PENDENTE.toString()%></option>
+		<option value="<%=StatusMatricula.TRANSFERIDO.toString()%>"><%=StatusMatricula.TRANSFERIDO.toString()%></option>
 	</select><br/>
-	<label for="sNomeMatri">Data da Matrícula</label>
-	<input type="date" name="nomeMatri" id="sNomeMatri" size="12" maxlength="12"/><br/>
+	<label for="sDataMatri">Data da Matrícula</label>
+	<input type="date" name="dataMatri" id="sDataMatri" size="12" maxlength="12"/><br/>
 	<label>Selecione a Turma</label>
   	<select name="seleTurma" id="TurmaSele">
-		<option value=""></option>
+  		<%for(Turma t:DaoTurma.listarTurma()){ %>
+		<option value="<%=t.getId()%>"><%=t.getNome()+"-"+t.getSerie().getAno()+"-"+t.getTurno().getStatus()%></option>
+		<%}%>
 	</select><br/>
 	</fieldset>
 	<fieldset>
@@ -68,10 +76,12 @@
 	<input type="tel" name="telResp" id="sTelResp" size="12" maxlength="12"/><br/>
 	<label for="sCelResp">Celular</label>
 	<input type="tel" name="celResp" id="sCelResp" size="12" maxlength="12"/><br/>
+	<label for="sParentecoResp">Parentesco</label>
+	<input type="text" name="parentescoResp" id="sParentescoResp" size="12" maxlength="20"/><br/>
 	<fieldset>
-	<input type="radio" id="masculino" name="genero" value="masculino">
+	<input type="radio" id="masculino" name="genero2" value="masculino">
   	<label for="masculino">Masculino</label>
-  	<input type="radio" id="feminino" name="genero" value="feminino">
+  	<input type="radio" id="feminino" name="genero2" value="feminino">
   	<label for="feminino">Feminino</label>
   	</fieldset><br>
 	</fieldset>

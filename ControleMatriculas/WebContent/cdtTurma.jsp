@@ -1,6 +1,7 @@
 <%@page import="javax.swing.text.PlainView"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import ="br.com.matriculas.model.Turno"%>
     <%@page import ="br.com.matriculas.model.PeriodoLetivo"%>
     <%@page import ="br.com.matriculas.dao.DaoPeriodoLetivo"%>
     <%@page import ="br.com.matriculas.model.Serie"%>
@@ -10,15 +11,17 @@
  <fieldset>
    <legend>Cadastrar Uma Nova Turma</legend>
 <form action="inputTurma.jsp">
+	<label for="sNomet">Nome da Turma</label>
+	<input type="text" name="cNomeT" id="sNomeT" maxlength="10"/><br/>
 	<label for="sVagas">Nº de Vagas</label>
 	<input type="number" name="cVagas" id="sVagas" maxlength="5"/><br/>
 	<label for="sSala">Sala</label>
 	<input type="number" name="cSala" id="sSala" maxlength="5"/><br/>
 	<label>Escolha um Turno</label>
 	<select name="seleTurno" id="turnoSele">
-		<option>matutino</option>
-		<option>vespertino</option>
-		<option>noturno</option>
+		<option value="<%=Turno.MATUTINO.toString()%>"><%=Turno.MATUTINO.toString()%></option>
+		<option value="<%=Turno.VESPERTINO.toString()%>"><%=Turno.VESPERTINO.toString()%></option>
+		<option value="<%=Turno.NOTURNO.toString()%>"><%=Turno.NOTURNO.toString()%></option>
 	</select><br/>
 	<label>Escolha um Período Letivo</label>
 	<select name="seleLetivo" id="letivoSele">

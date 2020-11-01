@@ -9,7 +9,7 @@
 <body>
 	<header></header>
 	<section>
-	<jsp:include page="cdtTurma.jsp"></jsp:include>
+	<jsp:include page="cdtMatricula.jsp"></jsp:include>
 	</section>
 	<footer></footer>
 </body>

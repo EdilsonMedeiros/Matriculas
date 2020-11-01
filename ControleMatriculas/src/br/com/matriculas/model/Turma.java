@@ -13,6 +13,7 @@ public class Turma {
 	@Id
 	@GeneratedValue
 	private int id;
+	private String nome;
 	private int qtdVagas;
 	private int sala;
 	@Enumerated(EnumType.STRING)
@@ -26,7 +27,7 @@ public class Turma {
 		super();
 	}
 
-	public Turma(int qtdVagas, int sala, Turno turno, PeriodoLetivo periodoLetivo, Serie serie) {
+	public Turma(int qtdVagas, String nome, int sala, Turno turno, PeriodoLetivo periodoLetivo, Serie serie) {
 		super();
 		this.qtdVagas = qtdVagas;
 		this.sala = sala;
@@ -41,6 +42,15 @@ public class Turma {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public int getQtdVagas() {

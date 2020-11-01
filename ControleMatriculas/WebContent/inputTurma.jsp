@@ -18,6 +18,7 @@
 </head>
 <body>
 	<% 
+	String turma = request.getParameter("cNomeT");
 	int vagas = Integer.parseInt(request.getParameter("cVagas"));
 	int sala = Integer.parseInt(request.getParameter("cSala"));
 	String turno = request.getParameter("seleTurno");
@@ -26,19 +27,13 @@
 	
 	PeriodoLetivo peri = DaoPeriodoLetivo.localizarPeriodoLetivoPorCodigo(periodo);
 	Serie seri = DaoSerie.localizarSeriePorCodigo(serie);
-	
-		
+	Turno.valueOf(turno);	
 	
 	Turma turm = new Turma();
+	turm.setNome(turma);
 	turm.setQtdVagas(vagas);
 	turm.setSala(sala);
-	if(Turno.MATUTINO.toString()==turno){
-	turm.setTurno(Turno.MATUTINO);
-	}else if(Turno.MATUTINO.toString()==turno){
-		turm.setTurno(Turno.VESPERTINO);
-		}else if(Turno.MATUTINO.toString()==turno){
-			turm.setTurno(Turno.NOTURNO);
-		}
+	turm.setTurno(Turno.valueOf(turno));
 	turm.setPeriodoLetivo(peri);
 	turm.setSerie(seri);
 	

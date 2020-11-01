@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import br.com.matriculas.model.Funcionario;
 import br.com.matriculas.model.Turma;
 
 public class DaoTurma {
@@ -68,5 +69,17 @@ public class DaoTurma {
 				sessao.close();
 				
 				return lista;
+			}
+			
+			public static Turma localizarTurmaPorCodigo(int id){
+				Session sessao = ConexaoBD.getSessionFactory().openSession();
+				sessao.beginTransaction();
+
+				Turma obj = (Turma) sessao.createQuery("FROM Turma WHERE id = " + id).uniqueResult();
+				
+				sessao.getTransaction().commit();
+				sessao.close();
+
+				return obj;
 			}
 }
