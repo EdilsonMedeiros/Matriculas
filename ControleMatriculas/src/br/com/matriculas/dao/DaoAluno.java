@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import java.util.List;
 
 import br.com.matriculas.model.Aluno;
+import br.com.matriculas.model.Professor;
 
 public class DaoAluno {
 	public static void inserirAluno(Aluno alun) {
@@ -67,6 +68,18 @@ public class DaoAluno {
 		sessao.close();
 		
 		return lista;
+	}
+	
+	public static Aluno localizarAlunoPorCodigo(int id){
+		Session sessao = ConexaoBD.getSessionFactory().openSession();
+		sessao.beginTransaction();
+
+		Aluno obj = (Aluno) sessao.createQuery("FROM Aluno WHERE id = " + id).uniqueResult();
+		
+		sessao.getTransaction().commit();
+		sessao.close();
+
+		return obj;
 	}
 
 }

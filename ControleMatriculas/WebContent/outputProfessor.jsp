@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="java.text.SimpleDateFormat"%>
-	<%@page import="java.util.Date"%>
      <%@page import ="br.com.matriculas.model.Professor"%>
     <%@page import ="br.com.matriculas.dao.DaoProfessor"%>
 <!DOCTYPE html>
@@ -22,25 +20,26 @@
 				<th>Cargo</th>
 				<th>Titulação</th>
 				<th>Formação</th>
+				<th>Ações</th>
 			</tr>
 		</thead>
 		<tbody>
-			<% for(Professor p:DaoProfessor.listarProfessor()){
-				out.println("<tr>");
-				out.println("<td>"+ p.getId() +"</td>");
-				out.println("<td>"+ p.getNome() +"</td>");
-				out.println("<td>"+ p.getEmail() +"</td>");
-				out.println("<td>"+ p.getTelefone1() +"</td>");
-				out.println("<td>"+ p.getTelefone2() +"</td>");
-				out.println("<td>"+ p.getCargo() +"</td>");
-				out.println("<td>"+ p.getTitulacao() +"</td>");
-				out.println("<td>"+ p.getAreaFormacao() +"</td>");
-				
-			out.println("</tr>");
-			}
-			
-			%>
-			
+			<% for(Professor p:DaoProfessor.listarProfessor()){%>
+				<tr>
+				<td><%= p.getId() %></td>
+				<td><%= p.getNome() %></td>
+				<td><%= p.getEmail() %></td>
+				<td><%= p.getTelefone1() %></td>
+				<td><%= p.getTelefone2() %></td>
+				<td><%= p.getCargo() %></td>
+				<td><%= p.getTitulacao() %></td>
+				<td><%= p.getAreaFormacao() %></td>
+				<td>
+				<a href="formEditProfessor.jsp?id=<%=p.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
+				<a href="detailProfessor.jsp?id=<%=p.getId()%>"><button><img src="_imagens/146-notebook.png" alt="detalhar"></button></a>
+				</td>
+				</tr>
+			<%}%>
 		</tbody>
 		<tfoot></tfoot>
 	</table>

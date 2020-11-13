@@ -33,7 +33,7 @@
 	
 	String nome2 = request.getParameter("nomeResp");
 	String cpf2 = request.getParameter("cpfResp");
-	String rg2 = request.getParameter("rgAResp");
+	String rg2 = request.getParameter("rgResp");
 	String sexo2 = request.getParameter("genero2");
 	String nasc2 = request.getParameter("nascResp");
 	String email2 = request.getParameter("emailResp");

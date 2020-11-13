@@ -17,14 +17,15 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% for(Serie s:DaoSerie.listarSerie()){
-				out.println("<tr>");
-				out.println("<td>"+ s.getId() +"</td>");
-				out.println("<td>"+ s.getAno() +" º ano </td>");
-			out.println("</tr>");
-			}
-			
-			%>
+			<% for(Serie s:DaoSerie.listarSerie()){%>
+				<tr>
+				<td><%=s.getId() %> </td>
+				<td><%=s.getAno()+"º ano"%></td>
+				<td>
+				<a href="formEditSerie.jsp?id=<%=s.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
+				</td>
+			</tr>
+			<%}%>
 			
 		</tbody>
 		<tfoot></tfoot>

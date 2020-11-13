@@ -25,19 +25,20 @@
 		<tbody>
 			<% 
 			SimpleDateFormat fd = new SimpleDateFormat("dd/MM/yyyy");
-			for(Turma t:DaoTurma.listarTurma()){
-				out.println("<tr>");
-				out.println("<td>"+ t.getId() +"</td>");
-				out.println("<td>"+ t.getNome() +"</td>");
-				out.println("<td>"+ t.getQtdVagas() +"</td>");
-				out.println("<td>"+ t.getSala() +"</td>");
-				out.println("<td>"+ t.getTurno().getStatus() +"</td>");
-				out.println("<td>"+ fd.format(t.getPeriodoLetivo().getDataInicio())+"-"+ fd.format(t.getPeriodoLetivo().getDataFim()) +"</td>");
-				out.println("<td>"+ t.getSerie().getAno() +"º</td>");
-			out.println("</tr>");
-			}
-			
-			%>
+			for(Turma t:DaoTurma.listarTurma()){ %>
+				<tr>
+				<td><%= t.getId() %></td>
+				<td><%= t.getNome() %></td>
+				<td><%= t.getQtdVagas() %></td>
+				<td><%= t.getSala() %></td>
+				<td><%= t.getTurno().getStatus() %></td>
+				<td><%= fd.format(t.getPeriodoLetivo().getDataInicio())+"-"+ fd.format(t.getPeriodoLetivo().getDataFim()) %></td>
+				<td><%= t.getSerie().getAno() +"º"%></td>
+				<td>
+				<a href="formEditTurma.jsp?id=<%=t.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
+				</td>
+				</tr>
+			<%}%>
 			
 		</tbody>
 		<tfoot></tfoot>

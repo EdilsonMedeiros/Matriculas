@@ -19,16 +19,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% for(Usuario u:DaoUsuario.listarUsuario()){
-				out.println("<tr>");
-				out.println("<td>"+ u.getId() +"</td>");
-				out.println("<td>"+ u.getUsuario() +"</td>");
-				out.println("<td>"+ u.getSenha() +"</td>");
-				out.println("<td>"+ u.getFuncionario().getNome() +"</td>");
-			out.println("</tr>");
-			}
-			
-			%>
+			<% for(Usuario u:DaoUsuario.listarUsuario()){%>
+				<tr>
+				<td><%= u.getId() %></td>
+				<td><%= u.getUsuario() %></td>
+				<td><%= u.getSenha() %></td>
+				<td><%= u.getFuncionario().getNome() %></td>
+				<td>
+				<a href="formEditUsuario.jsp?id=<%=u.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
+				</td>
+				</tr>
+			<%}%>
 			
 		</tbody>
 		<tfoot></tfoot>

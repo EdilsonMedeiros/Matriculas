@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import br.com.matriculas.model.Aluno;
 import br.com.matriculas.model.Matricula;
 
 public class DaoMatricula {
@@ -68,5 +69,17 @@ public class DaoMatricula {
 				sessao.close();
 				
 				return lista;
+			}
+			
+			public static Matricula localizarMatriculaPorCodigo(int id){
+				Session sessao = ConexaoBD.getSessionFactory().openSession();
+				sessao.beginTransaction();
+
+				Matricula obj = (Matricula) sessao.createQuery("FROM Matricula WHERE id = " + id).uniqueResult();
+				
+				sessao.getTransaction().commit();
+				sessao.close();
+
+				return obj;
 			}
 }

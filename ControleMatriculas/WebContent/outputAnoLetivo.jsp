@@ -17,18 +17,22 @@
 				<th>Id</th>
 				<th>Data de Início</th>
 				<th>Data de Término</th>
+				<th>Ações</th>
 			</tr>
 		</thead>
 		<tbody>
 			<% 
 			SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
-			for(PeriodoLetivo p:DaoPeriodoLetivo.listarPeriodoLetivo()){
-				out.println("<tr>");
-				out.println("<td>"+ p.getId() +"</td>");
-				out.println("<td>"+ formatoData.format(p.getDataInicio()) +"</td>");
-				out.println("<td>"+ formatoData.format(p.getDataFim()) +"</td>");
-			out.println("</tr>");
-			}
+			for(PeriodoLetivo p:DaoPeriodoLetivo.listarPeriodoLetivo()){%>
+				<tr>
+				<td><%=p.getId()%></td>
+				<td><%=formatoData.format(p.getDataInicio())%></td>
+				<td><%=formatoData.format(p.getDataFim())%></td>
+				<td>
+				<a href="formEditAnoLetivo.jsp?id=<%=p.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
+				</td>
+			</tr>
+			<%}%>
 			
 			%>
 			

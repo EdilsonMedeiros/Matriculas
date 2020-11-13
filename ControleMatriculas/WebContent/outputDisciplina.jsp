@@ -21,18 +21,19 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% for(Disciplina d:DaoDisciplina.listarDisciplina()){
-				out.println("<tr>");
-				out.println("<td>"+ d.getId() +"</td>");
-				out.println("<td>"+ d.getNome() +"</td>");
-				out.println("<td>"+ d.getCargaHoraria() +" horas</td>");
-				out.println("<td>"+ d.getEmenta() +"</td>");
-				out.println("<td>"+ d.getProfessor().getNome() +"</td>");
-				out.println("<td>"+ d.getSerie().getAno() +"º</td>");
-			out.println("</tr>");
-			}
-			
-			%>
+			<% for(Disciplina d:DaoDisciplina.listarDisciplina()){%>
+				<tr>
+				<td><%= d.getId()%></td>
+				<td><%= d.getNome() %></td>
+				<td><%= d.getCargaHoraria() %></td>
+				<td><%= d.getEmenta() %></td>
+				<td><%= d.getProfessor().getNome() %></td>
+				<td><%= d.getSerie().getAno() %></td>
+				<td>
+				<a href="formEditDisciplina.jsp?id=<%=d.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
+				</td>
+			</tr>
+			<%}%>
 			
 		</tbody>
 		<tfoot></tfoot>

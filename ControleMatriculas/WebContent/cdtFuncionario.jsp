@@ -43,7 +43,7 @@
 	<input type="text" name="cidadeFunc" id="sCidadeFunc" size="20" maxlength="40"/><br/>
 	<label for="sEstadoFunc">Estado</label>
 	<input type="text" name="estadoFunc" id="sEstadoFunc" size="20" maxlength="40"/><br/>
-	<label for="sPaisFunc">Estado</label>
+	<label for="sPaisFunc">País</label>
 	<input type="text" name="paisFunc" id="sPaisFunc" size="10" maxlength="20"/><br/>	
 	</fieldset>
 	<button type="submit">Salvar</button>

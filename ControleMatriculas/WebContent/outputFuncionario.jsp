@@ -7,11 +7,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
+	<table id="t01">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -21,23 +21,26 @@
 				<th>Celular</th>
 				<th>Cargo</th>
 				<th>Titulacao</th>
+				<th>Ações</th>
 			</tr>
 		</thead>
 		<tbody>
-			<% for(Funcionario f:DaoFuncionario.listarFuncionario()){
-				out.println("<tr>");
-				out.println("<td>"+ f.getId() +"</td>");
-				out.println("<td>"+ f.getNome() +"</td>");
-				out.println("<td>"+ f.getEmail() +"</td>");
-				out.println("<td>"+ f.getTelefone1() +"</td>");
-				out.println("<td>"+ f.getTelefone2() +"</td>");
-				out.println("<td>"+ f.getCargo() +"</td>");
-				out.println("<td>"+ f.getTitulacao() +"</td>");
-				
-			out.println("</tr>");
-			}
+			<% for(Funcionario f:DaoFuncionario.listarFuncionario()){%>
+				<tr>
+				<td><%= f.getId() %></td>
+				<td><%= f.getNome() %></td>
+				<td><%= f.getEmail() %></td>
+				<td><%= f.getTelefone1() %></td>
+				<td><%= f.getTelefone2() %></td>
+				<td><%= f.getCargo() %></td>
+				<td><%= f.getTitulacao() %></td>
+				<td>
+				<a href="formEditFuncionario.jsp?id=<%=f.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
+				<a href="detailFuncionario.jsp?id=<%=f.getId()%>"><button><img src="_imagens/146-notebook.png" alt="detalhar"></button></a>
+				</td>
+				</tr>
+			<%}%>
 			
-			%>
 			
 		</tbody>
 		<tfoot></tfoot>

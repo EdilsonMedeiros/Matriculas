@@ -87,6 +87,6 @@
 	</fieldset>
 	<button type="submit">Salvar</button>
 	<button type="reset">Apagar</button>
-	<button type="button">Cancelar</button>
+	<a href="index.jsp"><button type="button">Cancelar</button></a>
 </form>
 </fieldset>

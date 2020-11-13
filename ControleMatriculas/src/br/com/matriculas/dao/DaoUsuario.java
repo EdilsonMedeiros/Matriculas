@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import br.com.matriculas.model.Matricula;
 import br.com.matriculas.model.Usuario;
 
 public class DaoUsuario {
@@ -68,5 +69,17 @@ public class DaoUsuario {
 				sessao.close();
 				
 				return lista;
+			}
+			
+			public static Usuario localizarUsuarioPorCodigo(int id){
+				Session sessao = ConexaoBD.getSessionFactory().openSession();
+				sessao.beginTransaction();
+
+				Usuario obj = (Usuario) sessao.createQuery("FROM Usuario WHERE id = " + id).uniqueResult();
+				
+				sessao.getTransaction().commit();
+				sessao.close();
+
+				return obj;
 			}
 }
