@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
    <fieldset>
-   <legend>Cadastrar Uma Nova Série</legend>
+   <legend>Cadastrar Uma Nova SÃ©rie</legend>
 <form action="inputSerie.jsp" method="get">
 	<input type="text" name="cSerie" id="sSerie" maxlength="10"/>
 	<button type="submit">Salvar</button>

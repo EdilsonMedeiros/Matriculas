@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <fieldset>
    <legend>Cadastrar Um Novo Professor</legend>
 <form action="inputProfessor.jsp">
@@ -21,9 +21,9 @@
 	<input type="text" name="cargoProf" id="sCargoProf" size="20" maxlength="30"/><br/>
 	<label for="sCtpsProf">CTPS</label>
 	<input type="number" name="ctpsProf" id="sCtpsProf" size="20" maxlength="30"/><br/>
-	<label for="sTitulacaoProf">Titulação</label>
+	<label for="sTitulacaoProf">TitulaÃ§Ã£o</label>
 	<input type="text" name="titulacaoProf" id="sTitulacaoProf" size="20" maxlength="30"/><br/>
-	<label for="sFormacaoProf">Área de Formação</label>
+	<label for="sFormacaoProf">Ãrea de FormaÃ§Ã£o</label>
 	<input type="text" name="formacaoProf" id="sFormacaoProf" size="20" maxlength="30"/><br/>
 	<fieldset>
 	<input type="radio" id="masculino" name="genero" value="masculino">
@@ -32,12 +32,12 @@
   	<label for="feminino">Feminino</label>
   	</fieldset><br>
 	<fieldset>
-	<legend>Endereço</legend>
+	<legend>EndereÃ§o</legend>
 	<label for="sCepProf">Cep</label>
 	<input type="text" name="cepProf" id="sCepProf" size="10" maxlength="10"/><br/>
 	<label for="sRuaProf">Rua</label>
 	<input type="text" name="ruaProf" id="sRuaProf" size="30" maxlength="40"/><br/>
-	<label for="sNumeroProf">Nº</label>
+	<label for="sNumeroProf">NÂº</label>
 	<input type="text" name="numeroProf" id="sNumeroProf" size="5" maxlength="5"/><br/>
 	<label for="sBairroProf">Bairro</label>
 	<input type="text" name="bairroProf" id="sBairroProf" size="30" maxlength="40"/><br/>
@@ -45,7 +45,7 @@
 	<input type="text" name="cidadeProf" id="sCidadeProf" size="20" maxlength="40"/><br/>
 	<label for="sEstadoProf">Estado</label>
 	<input type="text" name="estadoProf" id="sEstadoProf" size="20" maxlength="40"/><br/>
-	<label for="sPaisProf">País</label>
+	<label for="sPaisProf">PaÃ­s</label>
 	<input type="text" name="paisProf" id="sPaisProf" size="10" maxlength="20"/><br/>	
 	</fieldset>
 	<button type="submit">Salvar</button>

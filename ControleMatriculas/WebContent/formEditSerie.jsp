@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@page import ="br.com.matriculas.model.Serie"%>
     <%@page import ="br.com.matriculas.dao.DaoSerie"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
 	%>
 	
 	   <fieldset>
-   <legend>Alterar Série</legend>
+   <legend>Alterar SÃ©rie</legend>
 <form action="editSerie.jsp" method="get">
 	<input type="hidden" name="id" value="<%=s.getId() %>"/>
 	<input type="text" name="cSerie" id="sSerie" maxlength="10" value="<%=s.getAno() %>"/>

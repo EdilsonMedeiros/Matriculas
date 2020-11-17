@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@page import ="br.com.matriculas.model.StatusMatricula"%>
     <%@page import ="br.com.matriculas.model.Turma"%>
     <%@page import ="br.com.matriculas.dao.DaoTurma"%>
 <fieldset>
-   <legend>Matrícula</legend>
+   <legend>MatrÃ­cula</legend>
 <form action="inputMatricula.jsp">
 	<label for="sNomeAluno">Nome do Aluno</label>
 	<input type="text" name="nomeAluno" id="sNomeAluno" size="30" maxlength="40"/><br/>
@@ -27,14 +27,14 @@
   	<label for="feminino">Feminino</label>
   	</fieldset><br>
   	<fieldset>
-  	<label>Status da Matrícula</label>
+  	<label>Status da MatrÃ­cula</label>
   	<select name="seleStatus" id="StatusSele">
 		<option value="<%=StatusMatricula.MATRICULADO.toString()%>"><%=StatusMatricula.MATRICULADO.toString()%></option>
 		<option value="<%=StatusMatricula.EXPULSO.toString()%>"><%=StatusMatricula.EXPULSO.toString()%></option>
 		<option value="<%=StatusMatricula.PENDENTE.toString()%>"><%=StatusMatricula.PENDENTE.toString()%></option>
 		<option value="<%=StatusMatricula.TRANSFERIDO.toString()%>"><%=StatusMatricula.TRANSFERIDO.toString()%></option>
 	</select><br/>
-	<label for="sDataMatri">Data da Matrícula</label>
+	<label for="sDataMatri">Data da MatrÃ­cula</label>
 	<input type="date" name="dataMatri" id="sDataMatri" size="12" maxlength="12"/><br/>
 	<label>Selecione a Turma</label>
   	<select name="seleTurma" id="TurmaSele">
@@ -44,12 +44,12 @@
 	</select><br/>
 	</fieldset>
 	<fieldset>
-	<legend>Endereço</legend>
+	<legend>EndereÃ§o</legend>
 	<label for="sCepAluno">Cep</label>
 	<input type="text" name="cepAluno" id="sCepAluno" size="10" maxlength="10"/><br/>
 	<label for="sRuaAluno">Rua</label>
 	<input type="text" name="ruaAluno" id="sRuaAluno" size="30" maxlength="40"/><br/>
-	<label for="sNumeroAluno">Nº</label>
+	<label for="sNumeroAluno">NÂº</label>
 	<input type="text" name="numeroAluno" id="sNumeroAluno" size="5" maxlength="5"/><br/>
 	<label for="sBairroAluno">Bairro</label>
 	<input type="text" name="bairroAluno" id="sBairroAluno" size="30" maxlength="40"/><br/>
@@ -61,7 +61,7 @@
 	<input type="text" name="paisAluno" id="sPaisAluno" size="10" maxlength="20"/><br/>	
 	</fieldset>
 	<fieldset>
-	<legend>Responsável</legend>
+	<legend>ResponsÃ¡vel</legend>
 	<label for="sNomeResp">Nome do Responsavel</label>
 	<input type="text" name="nomeResp" id="sNomeResp" size="30" maxlength="40"/><br/>
 	<label for="sCpfResp">CPF</label>

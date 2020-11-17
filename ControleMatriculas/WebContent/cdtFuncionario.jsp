@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 	<fieldset>
-   <legend>Cadastrar Uma Novo Funcionário</legend>
+   <legend>Cadastrar Uma Novo FuncionÃ¡rio</legend>
 <form action="inputFuncionario.jsp">
 	<label for="sNomeFunc">Nome</label>
 	<input type="text" name="nomeFunc" id="sNomeFunc" size="30" maxlength="40"/><br/>
@@ -21,7 +21,7 @@
 	<input type="text" name="cargoFunc" id="sCargoFunc" size="20" maxlength="30"/><br/>
 	<label for="sCtpsFunc">CTPS</label>
 	<input type="number" name="ctpsFunc" id="sCtpsFunc" size="20" maxlength="30"/><br/>
-	<label for="sTitulacaoFunc">Titulação</label>
+	<label for="sTitulacaoFunc">TitulaÃ§Ã£o</label>
 	<input type="text" name="titulacaoFunc" id="sTitulacaoFunc" size="20" maxlength="30"/><br/>
 	<fieldset>
 	<input type="radio" id="masculino" name="genero" value="masculino">
@@ -30,12 +30,12 @@
   	<label for="feminino">Feminino</label>
   	</fieldset><br>
 	<fieldset>
-	<legend>Endereço</legend>
+	<legend>EndereÃ§o</legend>
 	<label for="sCepFunc">Cep</label>
 	<input type="text" name="cepFunc" id="sCepFunc" size="10" maxlength="10"/><br/>
 	<label for="sRuaFunc">Rua</label>
 	<input type="text" name="ruaFunc" id="sRuaFunc" size="30" maxlength="40"/><br/>
-	<label for="sNumeroFunc">Nº</label>
+	<label for="sNumeroFunc">NÂº</label>
 	<input type="text" name="numeroFunc" id="sNumeroFunc" size="5" maxlength="5"/><br/>
 	<label for="sBairroFunc">Bairro</label>
 	<input type="text" name="bairroFunc" id="sBairroFunc" size="30" maxlength="40"/><br/>
@@ -43,7 +43,7 @@
 	<input type="text" name="cidadeFunc" id="sCidadeFunc" size="20" maxlength="40"/><br/>
 	<label for="sEstadoFunc">Estado</label>
 	<input type="text" name="estadoFunc" id="sEstadoFunc" size="20" maxlength="40"/><br/>
-	<label for="sPaisFunc">País</label>
+	<label for="sPaisFunc">PaÃ­s</label>
 	<input type="text" name="paisFunc" id="sPaisFunc" size="10" maxlength="20"/><br/>	
 	</fieldset>
 	<button type="submit">Salvar</button>

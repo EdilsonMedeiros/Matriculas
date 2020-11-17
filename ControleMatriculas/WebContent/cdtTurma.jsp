@@ -1,6 +1,6 @@
 <%@page import="javax.swing.text.PlainView"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@page import ="br.com.matriculas.model.Turno"%>
     <%@page import ="br.com.matriculas.model.PeriodoLetivo"%>
     <%@page import ="br.com.matriculas.dao.DaoPeriodoLetivo"%>
@@ -13,7 +13,7 @@
 <form action="inputTurma.jsp">
 	<label for="sNomet">Nome da Turma</label>
 	<input type="text" name="cNomeT" id="sNomeT" maxlength="10"/><br/>
-	<label for="sVagas">Nº de Vagas</label>
+	<label for="sVagas">NÂº de Vagas</label>
 	<input type="number" name="cVagas" id="sVagas" maxlength="5"/><br/>
 	<label for="sSala">Sala</label>
 	<input type="number" name="cSala" id="sSala" maxlength="5"/><br/>
@@ -23,18 +23,18 @@
 		<option value="<%=Turno.VESPERTINO.toString()%>"><%=Turno.VESPERTINO.toString()%></option>
 		<option value="<%=Turno.NOTURNO.toString()%>"><%=Turno.NOTURNO.toString()%></option>
 	</select><br/>
-	<label>Escolha um Período Letivo</label>
+	<label>Escolha um PerÃ­odo Letivo</label>
 	<select name="seleLetivo" id="letivoSele">
 	<%
 		SimpleDateFormat fD = new SimpleDateFormat("dd/MM/yyyy");
 	for(PeriodoLetivo pl: DaoPeriodoLetivo.listarPeriodoLetivo()){ %>
-		<option value="<%=pl.getId()%>"><%="De: "+fD.format(pl.getDataInicio())+" até: "+fD.format(pl.getDataFim())%></option>
+		<option value="<%=pl.getId()%>"><%="De: "+fD.format(pl.getDataInicio())+" atÃ©: "+fD.format(pl.getDataFim())%></option>
 		<%}%>
 	</select><br/>
-	<label>Escolha uma Série</label>
+	<label>Escolha uma SÃ©rie</label>
 	<select name="seleSerie" id="SerieSele">
 	<% for(Serie se: DaoSerie.listarSerie()){ %>
-		<option value="<%=se.getId()%>"><%=se.getAno()+"º ano"%></option>
+		<option value="<%=se.getId()%>"><%=se.getAno()+"Âº ano"%></option>
 		<%} %>
 	</select><br/>
 	<button type="submit">Salvar</button>

@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@page import="java.text.SimpleDateFormat"%>
     <%@page import ="br.com.matriculas.model.Turma"%>
     <%@page import ="br.com.matriculas.dao.DaoTurma"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -15,11 +15,11 @@
 			<tr>
 				<th>Id</th>
 				<th>Nome</th>
-				<th>Nº Vagas</th>
+				<th>NÂº Vagas</th>
 				<th>Sala</th>
 				<th>Turno</th>
-				<th>Período Letivo</th>
-				<th>Série</th>
+				<th>PerÃ­odo Letivo</th>
+				<th>SÃ©rie</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,7 +33,7 @@
 				<td><%= t.getSala() %></td>
 				<td><%= t.getTurno().getStatus() %></td>
 				<td><%= fd.format(t.getPeriodoLetivo().getDataInicio())+"-"+ fd.format(t.getPeriodoLetivo().getDataFim()) %></td>
-				<td><%= t.getSerie().getAno() +"º"%></td>
+				<td><%= t.getSerie().getAno() +"Âº"%></td>
 				<td>
 				<a href="formEditTurma.jsp?id=<%=t.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
 				</td>

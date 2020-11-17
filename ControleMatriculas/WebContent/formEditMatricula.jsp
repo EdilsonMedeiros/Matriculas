@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
      <%@page import="java.text.SimpleDateFormat"%>
 	<%@page import="java.util.Date"%>
 	<%@page import ="br.com.matriculas.model.Responsavel"%>
@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
 		SimpleDateFormat fd = new SimpleDateFormat("dd/MM/yyyy");
 	%>
 		<fieldset>
-   <legend>Alterar Matrícula</legend>
+   <legend>Alterar MatrÃ­cula</legend>
 <form action="editMatricula.jsp">
 	<input type="hidden" name="id" value="<%=m.getId() %>"/><br/>
 	<label for="sNomeAluno">Nome do Aluno</label>
@@ -49,14 +49,14 @@
   	<label for="feminino">Feminino</label>
   	</fieldset><br>
   	<fieldset>
-  	<label>Status da Matrícula</label>
+  	<label>Status da MatrÃ­cula</label>
   	<select name="seleStatus" id="StatusSele">
 		<option value="<%=StatusMatricula.MATRICULADO.toString()%>"><%=StatusMatricula.MATRICULADO.toString()%></option>
 		<option value="<%=StatusMatricula.EXPULSO.toString()%>"><%=StatusMatricula.EXPULSO.toString()%></option>
 		<option value="<%=StatusMatricula.PENDENTE.toString()%>"><%=StatusMatricula.PENDENTE.toString()%></option>
 		<option value="<%=StatusMatricula.TRANSFERIDO.toString()%>"><%=StatusMatricula.TRANSFERIDO.toString()%></option>
 	</select><br/>
-	<label for="sDataMatri">Data da Matrícula</label>
+	<label for="sDataMatri">Data da MatrÃ­cula</label>
 	<input type="date" name="dataMatri" id="sDataMatri" size="12" maxlength="12" value="<%=fd.format(m.getDataMatricula()) %>"/><br/>
 	<label>Selecione a Turma</label>
   	<select name="seleTurma" id="TurmaSele">
@@ -66,12 +66,12 @@
 	</select><br/>
 	</fieldset>
 	<fieldset>
-	<legend>Endereço</legend>
+	<legend>EndereÃ§o</legend>
 	<label for="sCepAluno">Cep</label>
 	<input type="text" name="cepAluno" id="sCepAluno" size="10" maxlength="10" value="<%=m.getAluno().getEndereco().getCep() %>"/><br/>
 	<label for="sRuaAluno">Rua</label>
 	<input type="text" name="ruaAluno" id="sRuaAluno" size="30" maxlength="40" value="<%=m.getAluno().getEndereco().getRua() %>"/><br/>
-	<label for="sNumeroAluno">Nº</label>
+	<label for="sNumeroAluno">NÂº</label>
 	<input type="text" name="numeroAluno" id="sNumeroAluno" size="5" maxlength="5" value="<%=m.getAluno().getEndereco().getNumero() %>"/><br/>
 	<label for="sBairroAluno">Bairro</label>
 	<input type="text" name="bairroAluno" id="sBairroAluno" size="30" maxlength="40" value="<%=m.getAluno().getEndereco().getBairro() %>"/><br/>
@@ -79,11 +79,11 @@
 	<input type="text" name="cidadeAluno" id="sCidadeAluno" size="20" maxlength="40" value="<%=m.getAluno().getEndereco().getCidade() %>"/><br/>
 	<label for="sEstadoAluno">Estado</label>
 	<input type="text" name="estadoAluno" id="sEstadoAluno" size="20" maxlength="40" value="<%=m.getAluno().getEndereco().getEstado() %>"/><br/>
-	<label for="sPaisAluno">País</label>
+	<label for="sPaisAluno">PaÃ­s</label>
 	<input type="text" name="paisAluno" id="sPaisAluno" size="10" maxlength="20" value="<%=m.getAluno().getEndereco().getPais() %>"/><br/>	
 	</fieldset>
 	<fieldset>
-	<legend>Responsável</legend>
+	<legend>ResponsÃ¡vel</legend>
 	<label for="sNomeResp">Nome do Responsavel</label>
 	<input type="text" name="nomeResp" id="sNomeResp" size="30" maxlength="40" value="<%=m.getAluno().getResponsavel().getNome() %>"/><br/>
 	<label for="sCpfResp">CPF</label>

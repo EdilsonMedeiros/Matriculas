@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@page import ="br.com.matriculas.model.Usuario"%>
     <%@page import ="br.com.matriculas.dao.DaoUsuario"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -13,9 +13,9 @@
 		<thead>
 			<tr>
 				<th>Id</th>
-				<th>Usuário</th>
+				<th>UsuÃ¡rio</th>
 				<th>Senha</th>
-				<th>Funcionário</th>
+				<th>FuncionÃ¡rio</th>
 			</tr>
 		</thead>
 		<tbody>

@@ -1,6 +1,5 @@
-<%@page import="br.com.matriculas.dao.DaoProfessor"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@page import ="br.com.matriculas.dao.DaoProfessor"%>
     <%@page import ="br.com.matriculas.model.Professor"%>
     <%@page import ="br.com.matriculas.dao.DaoSerie"%>
@@ -10,7 +9,7 @@
 <form action="inputDisciplina.jsp">
 	<label for="sDisciplina">Nome</label>
 	<input type="text" name="cDisciplina" id="sDisciplina" maxlength="30"/><br/>
-	<label for="sCargaHoraria">Carga Hor·ria</label>
+	<label for="sCargaHoraria">Carga Hor√°ria</label>
 	<input type="number" name="cCargaHoraria" id="sCargaHoraria" size="5" maxlength="4"/><br/>
 	<label>Ementa</label>
 	<textarea rows="" cols="" name="cEmenta" id="sEmenta">
@@ -21,10 +20,10 @@
 		<option value="<%=pr.getId()%>"><%=pr.getNome()%></option>
 		<%} %>
 	</select><br/>
-	<label>Selecione uma SÈrie</label>
+	<label>Selecione uma S√©rie</label>
 	<select name="seleSerie" id="SerieSele">
 		<%for(Serie se: DaoSerie.listarSerie()){ %>
-		<option value="<%=se.getId()%>"><%=se.getAno()+"∫ ano"%></option>
+		<option value="<%=se.getId()%>"><%=se.getAno()+"¬∫ ano"%></option>
 		<%} %>
 	</select><br/>
 	<button type="submit">Salvar</button>

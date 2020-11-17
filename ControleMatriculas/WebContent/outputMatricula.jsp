@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@page import ="br.com.matriculas.model.Matricula"%>
     <%@page import ="br.com.matriculas.dao.DaoMatricula"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -14,12 +14,12 @@
 			<tr>
 				<th>Id</th>
 				<th>Aluno</th>
-				<th>Status da Matrícula</th>
+				<th>Status da MatrÃ­cula</th>
 				<th>Turma</th>
 				<th>Sala</th>
-				<th>Série</th>
+				<th>SÃ©rie</th>
 				<th>Turno</th>
-				<th>Ações</th>
+				<th>AÃ§Ãµes</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -30,7 +30,7 @@
 				<td><%= m.getStatusmatricula() %></td>
 				<td><%= m.getTurma().getNome() %></td>
 				<td><%= m.getTurma().getSala() %></td>
-				<td><%= m.getTurma().getSerie().getAno()%>º ano </td>
+				<td><%= m.getTurma().getSerie().getAno()%>Âº ano </td>
 				<td><%= m.getTurma().getTurno().getStatus()%> </td>
 				<td>
 				<a href="formEditMatricula.jsp?id=<%=m.getId()%>"><button><img src="_imagens/066-edit-1.png" alt="editar"></button></a>
