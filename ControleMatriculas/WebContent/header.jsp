@@ -11,22 +11,28 @@
             <a class="nav-link js-scroll-trigger" href="index.jsp">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#matriculas">Matrículas</a>
+            <a class="nav-link js-scroll-trigger" href="outputMatricula.jsp">Matrículas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Cadastros
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="outputProfessor.jsp">Professores</a>
+    <a class="dropdown-item" href="outputFuncionario.jsp">Funcionários</a>
+    <a class="dropdown-item" href="outputTurma.jsp">Turmas</a>
+    <a class="dropdown-item" href="outputAnoLetivo.jsp">Período Letivo</a>
+    <a class="dropdown-item" href="outputUsuario.jsp">Usuários</a>
+    <a class="dropdown-item" href="outputDisciplina.jsp">Disciplinas</a>
+    <a class="dropdown-item" href="outputSerie.jsp">Series</a>
+  </div>
+</div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <header class="bg-primary text-white">
-    <div class="container text-center">
-      <h1>Bem-Vindo</h1>
-      <p class="lead">Para interagir com o sistema é necessário usar seu login</p>
-    </div>
-  </header>

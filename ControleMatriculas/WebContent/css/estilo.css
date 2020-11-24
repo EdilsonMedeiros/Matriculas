@@ -19,7 +19,7 @@ th, td {
   color: white;
 }
 
-button{
+button.acoes{
 	width:30px;
 	height:30px;
 	padding:0px;
