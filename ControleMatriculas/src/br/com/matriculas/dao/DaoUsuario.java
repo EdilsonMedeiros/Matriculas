@@ -82,4 +82,15 @@ public class DaoUsuario {
 
 				return obj;
 			}
+			public static Usuario localizarUsuarioPorUsuario(String login){
+				Session sessao = ConexaoBD.getSessionFactory().openSession();
+				sessao.beginTransaction();
+
+				Usuario obj = (Usuario) sessao.createQuery("FROM Usuario WHERE usuario =  '" + login +"'").uniqueResult();
+				
+				sessao.getTransaction().commit();
+				sessao.close();
+
+				return obj;
+			}
 }

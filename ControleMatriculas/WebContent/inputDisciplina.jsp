@@ -1,3 +1,5 @@
+
+<%@page import="java.io.IOException"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import ="br.com.matriculas.model.Professor"%>
@@ -14,6 +16,7 @@
 </head>
 <body>
 	<%
+	try{
 	String nomeDisc = request.getParameter("cDisciplina");
 	int cargaHoraria = Integer.parseInt(request.getParameter("cCargaHoraria"));
 	String ementa = request.getParameter("cEmenta");
@@ -33,6 +36,21 @@
 	DaoDisciplina.inserirDisciplina(disci);
 	
 	response.sendRedirect("outputDisciplina.jsp");
-	%>
+	}catch(java.lang.NumberFormatException e){%>
+		<script>
+		alert("Você digitou algum dado de forma incorreta");
+		window.location.href = "http://localhost:8080/ControleMatriculas/cdtDisciplina.jsp";
+		</script>
+	<%}catch (IOException e) {%>
+		<script>
+		alert("Não a conexão com o banco de dados!");
+		window.location.href = "http://localhost:8080/ControleMatriculas/cdtDisciplina.jsp";
+		</script>
+	<%}catch (Exception e) {%>
+	<script>
+	alert("Erro Não identificado!");
+	window.location.href = "http://localhost:8080/ControleMatriculas/cdtDisciplina.jsp";
+	</script> %>
+	<%} %>
 </body>
 </html>

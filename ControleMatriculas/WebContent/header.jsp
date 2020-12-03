@@ -14,7 +14,7 @@
             <a class="nav-link js-scroll-trigger" href="outputMatricula.jsp">Matrículas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link js-scroll-trigger" href="logout.jsp">Sair</a>
           </li>
           <li class="nav-item">
             <div class="dropdown">

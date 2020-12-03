@@ -1,3 +1,4 @@
+<%@page import="java.io.IOException"%>
 <%@page import="javax.persistence.EnumType"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -17,7 +18,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% 
+	<%
+	try{
 	String turma = request.getParameter("cNomeT");
 	int vagas = Integer.parseInt(request.getParameter("cVagas"));
 	int sala = Integer.parseInt(request.getParameter("cSala"));
@@ -39,6 +41,21 @@
 	
 	DaoTurma.inserirTurma(turm);
 	response.sendRedirect("outputTurma.jsp");
-	%>
+	}catch(java.lang.NumberFormatException e){%>
+		<script>
+		alert("Você digitou algum dado de forma incorreta");
+		window.location.href = "http://localhost:8080/ControleMatriculas/cdtTurma.jsp";
+		</script>
+	<%}catch (IOException e) {%>
+		<script>
+		alert("Não a conexão com o banco de dados!");
+		window.location.href = "http://localhost:8080/ControleMatriculas/cdtTurma.jsp";
+		</script>
+	<%}catch (Exception e) {%>
+	<script>
+	alert("Erro Não identificado!");
+	window.location.href = "http://localhost:8080/ControleMatriculas/cdtTurma.jsp";
+	</script> %>
+	<%} %>
 </body>
 </html>

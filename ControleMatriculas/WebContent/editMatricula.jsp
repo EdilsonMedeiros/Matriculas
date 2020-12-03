@@ -1,3 +1,4 @@
+<%@page import="java.io.IOException"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import="java.text.SimpleDateFormat"%>
@@ -18,6 +19,7 @@
 </head>
 <body>
 	<%
+	try{
 	int idMatricula =Integer.parseInt(request.getParameter("id"));
 	String statusMatri = request.getParameter("seleStatus");
 	String dataMatri = request.getParameter("dataMatri");
@@ -93,7 +95,22 @@
 	DaoMatricula.editarMatricula(matr);
 	
 	response.sendRedirect("outputMatricula.jsp");
-	%>
+	}catch(java.text.ParseException e){%>
+		<script>
+		alert("Você digitou algum dado de forma incorreta");
+		window.location.href = "http://localhost:8080/ControleMatriculas/formEditMatricula.jsp";
+		</script>
+	<%}catch (IOException e) {%>
+		<script>
+		alert("Não a conexão com o banco de dados!");
+		window.location.href = "http://localhost:8080/ControleMatriculas/formEditMatricula.jsp";
+		</script>
+	<%}catch (Exception e) {%>
+	<script>
+	alert("Erro Não identificado!");
+	window.location.href = "http://localhost:8080/ControleMatriculas/formEditMatricula.jsp";
+	</script> %>
+	<%} %>
 
 </body>
 </html>

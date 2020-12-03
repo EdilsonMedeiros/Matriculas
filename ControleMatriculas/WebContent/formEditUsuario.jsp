@@ -42,7 +42,7 @@
 						<legend>Alterar Usuário</legend>
 						<form action="editUsuario.jsp">
 							<input type="hidden" name="id" value="<%=u.getId()%>" /> <label
-								for="sUsuario"> Usuário</label> <input type="email"
+								for="sUsuario"> Usuário</label> <input type="text"
 								name="cUsuario" id="sUsuario" maxlength="30"
 								value="<%=u.getUsuario()%>" /><br /> <label for="sSenha">
 								Senha</label> <input type="password" name="cSenha" id="sSenha"
