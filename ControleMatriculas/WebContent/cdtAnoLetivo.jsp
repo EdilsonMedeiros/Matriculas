@@ -37,8 +37,8 @@
 						<legend>Cadastrar Um Novo Período Letivo</legend>
 						<form action="inputAnoLetivo.jsp" method="get">
 							<label for="sInicio">Data de Início</label> <input type="text"
-								name="cInicio" class="data" /><br /> <label for="sFim">Data
-								de Término</label> <input type="text" name="cFim" class="data" /><br />
+								name="cInicio"  data-mask="00/00/0000" placeholder="00/00/0000"/><br /> <label for="sFim">Data
+								de Término</label> <input type="text" name="cFim" data-mask="00/00/0000" placeholder="00/00/0000"/><br />
 							<button class="acoes" type="submit"><img alt="salvar" src="_imagens/083-floppy-disk.png"> </button>
 							<button class="acoes" type="reset"><img alt="apagar" src="_imagens/017-paint-brush.png"></button>
 							<a href="outputAnoLetivo.jsp"><button class="acoes" type="button"><img alt="cancelar" src="_imagens/cancel.png"></button></a>
@@ -49,10 +49,7 @@
 		</div>
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>
-	<script type="text/javascript">
-		$(".data").mask("99/99/9999");
 	
-	</script>
 	
 
 	<!-- Bootstrap core JavaScript -->
@@ -64,6 +61,11 @@
 
 	<!-- Custom JavaScript for this theme -->
 	<script src="js/scrolling-nav.js"></script>
+	
+	  <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- jQuery Mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 	
 </body>
 

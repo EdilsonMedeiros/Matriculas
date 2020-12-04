@@ -55,13 +55,13 @@
 								name="nomeAluno" id="sNomeAluno" size="30" maxlength="40"
 								value="<%=m.getAluno().getNome()%>" /><br /> <label
 								for="sCpfAluno">CPF</label> <input type="text" name="cpfAluno"
-								id="sCpfAluno" size="14" maxlength="11"
+								data-mask="000.000.000-00" size="14" maxlength="11"
 								value="<%=m.getAluno().getCpf()%>" /><br /> <label
 								for="srgAluno">RG</label> <input type="text" name="rgAluno"
 								id="sRgAluno" size="14" maxlength="20"
 								value="<%=m.getAluno().getRg()%>" /><br /> <label
 								for="sNascAluno">Data de Nascimento</label> <input type="date"
-								name="nascAluno" id="sNascAluno" size="10" maxlength="12"
+								name="nascAluno" data-mask="00/00/0000" size="10" maxlength="12"
 								value="<%=fd.format(m.getAluno().getDataNasc())%>" /><br /> <label
 								for="sEmailAluno">E-mail</label> <input type="email"
 								name="emailAluno" id="sEmailAluno" size="30" maxlength="40"
@@ -87,7 +87,7 @@
 									<option value="<%=StatusMatricula.PENDENTE.toString()%>"><%=StatusMatricula.PENDENTE.toString()%></option>
 									<option value="<%=StatusMatricula.TRANSFERIDO.toString()%>"><%=StatusMatricula.TRANSFERIDO.toString()%></option>
 								</select><br /> <label for="sDataMatri">Data da Matrícula</label> <input
-									type="date" name="dataMatri" id="sDataMatri" size="12"
+									type="date" name="dataMatri" data-mask="00/00/0000" size="12"
 									maxlength="12" value="<%=fd.format(m.getDataMatricula())%>" /><br />
 								<label>Selecione a Turma</label> <select name="seleTurma"
 									id="TurmaSele">
@@ -131,13 +131,13 @@
 									maxlength="40"
 									value="<%=m.getAluno().getResponsavel().getNome()%>" /><br />
 								<label for="sCpfResp">CPF</label> <input type="text"
-									name="cpfResp" id="sCpfResp" size="14" maxlength="11"
+									name="cpfResp" data-mask="000.000.000-00" size="14" maxlength="11"
 									value="<%=m.getAluno().getResponsavel().getCpf()%>" /><br /> <label
 									for="srgResp">RG</label> <input type="text" name="rgResp"
 									id="sRgResp" size="14" maxlength="20"
 									value="<%=m.getAluno().getResponsavel().getRg()%>" /><br /> <label
 									for="sNascResp">Data de Nascimento</label> <input type="date"
-									name="nascResp" id="sNascResp" size="10" maxlength="12"
+									name="nascResp" data-mask="00/00/0000" size="10" maxlength="12"
 									value="<%=fd.format(m.getAluno().getResponsavel().getDataNasc())%>" /><br />
 								<label for="sEmailResp">E-mail</label> <input type="email"
 									name="emailResp" id="sEmailResp" size="30" maxlength="40"

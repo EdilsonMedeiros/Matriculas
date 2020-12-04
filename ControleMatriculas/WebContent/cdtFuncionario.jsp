@@ -36,11 +36,11 @@
 							<label for="sNomeFunc">Nome</label> <input type="text"
 								name="nomeFunc" id="sNomeFunc" size="30" maxlength="40" /><br />
 							<label for="sCpfFunc">CPF</label> <input type="text"
-								name="cpfFunc" id="sCpfFunc" size="14" maxlength="11" /><br /> <label
+								name="cpfFunc" data-mask="000.000.000-00" size="14" maxlength="11" /><br /> <label
 								for="srgFunc">RG</label> <input type="text" name="rgFunc"
-								id="sRgFunc" size="14" maxlength="20" /><br /> <label
+								 size="14" maxlength="20" /><br /> <label
 								for="sNascFunc">Data de Nascimento</label> <input type="date"
-								name="nascFunc" id="sNascFunc" size="10" maxlength="12" /><br />
+								name="nascFunc" data-mask="00/00/0000" size="10" maxlength="12" /><br />
 							<label for="sEmailFunc">E-mail</label> <input type="email"
 								name="emailFunc" id="sEmailFunc" size="30" maxlength="40" /><br />
 							<label for="sTelFunc">Telefone</label> <input type="tel"
@@ -98,6 +98,11 @@
 
 	<!-- Custom JavaScript for this theme -->
 	<script src="js/scrolling-nav.js"></script>
+	
+	 <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- jQuery Mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 
 </body>
 

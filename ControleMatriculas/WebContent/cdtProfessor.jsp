@@ -36,11 +36,11 @@
 							<label for="sNomeProf">Nome</label> <input type="text"
 								name="nomeProf" id="sNomeProf" size="30" maxlength="40" /><br />
 							<label for="sCpfProf">CPF</label> <input type="text"
-								name="cpfProf" id="sCpfProf" size="14" maxlength="11" /><br /> <label
+								name="cpfProf" data-mask="000.000.000-00" size="14" maxlength="11" /><br /> <label
 								for="srgProf">RG</label> <input type="text" name="rgProf"
 								id="sRgProf" size="14" maxlength="20" /><br /> <label
 								for="sNascProf">Data de Nascimento</label> <input type="date"
-								name="nascProf" id="sNascProf" size="10" maxlength="12" /><br />
+								name="nascProf" data-mask="00/00/0000" size="10" maxlength="12" /><br />
 							<label for="sEmailProf">E-mail</label> <input type="email"
 								name="emailProf" id="sEmailProf" size="30" maxlength="40" /><br />
 							<label for="sTelProf">Telefone</label> <input type="tel"
@@ -100,7 +100,11 @@
 
 	<!-- Custom JavaScript for this theme -->
 	<script src="js/scrolling-nav.js"></script>
-
+	
+	  <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- jQuery Mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 </body>
 
 </html>

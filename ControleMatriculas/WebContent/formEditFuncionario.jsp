@@ -47,12 +47,12 @@
 								for="sNomeFunc">Nome</label> <input type="text" name="nomeFunc"
 								id="sNomeFunc" size="30" maxlength="40" value="<%=f.getNome()%>" /><br />
 							<label for="sCpfFunc">CPF</label> <input type="text"
-								name="cpfFunc" id="sCpfFunc" size="14" maxlength="11"
+								name="cpfFunc" data-mask="000.000.000-00" size="14" maxlength="11"
 								value="<%=f.getCpf()%>" /><br /> <label for="srgFunc">RG</label>
 							<input type="text" name="rgFunc" id="sRgFunc" size="14"
 								maxlength="20" value="<%=f.getRg()%>" /><br /> <label
 								for="sNascFunc">Data de Nascimento</label> <input type="date"
-								name="nascFunc" id="sNascFunc" size="10" maxlength="12"
+								name="nascFunc" data-mask="00/00/0000" size="10" maxlength="12"
 								value="<%=fd.format(f.getDataNasc())%>" /><br /> <label
 								for="sEmailFunc">E-mail</label> <input type="email"
 								name="emailFunc" id="sEmailFunc" size="30" maxlength="40"

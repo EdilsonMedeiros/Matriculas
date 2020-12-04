@@ -47,12 +47,12 @@
 								for="sNomeProf">Nome</label> <input type="text" name="nomeProf"
 								id="sNomeProf" size="30" maxlength="40"
 								value="<%=p.getNome()%>" /><br /> <label for="sCpfProf">CPF</label>
-							<input type="text" name="cpfProf" id="sCpfProf" size="14"
+							<input type="text" name="cpfProf" data-mask="000.000.000-00" size="14"
 								maxlength="11" value="<%=p.getCpf()%>" /><br /> <label
 								for="srgProf">RG</label> <input type="text" name="rgProf"
 								id="sRgProf" size="14" maxlength="20" value="<%=p.getRg()%>" /><br />
 							<label for="sNascProf">Data de Nascimento</label> <input
-								type="date" name="nascProf" id="sNascProf" size="10"
+								type="date" name="nascProf" data-mask="00/00/0000" size="10"
 								maxlength="12" value="<%=fd.format(p.getDataNasc())%>" /><br />
 							<label for="sEmailProf">E-mail</label> <input type="email"
 								name="emailProf" id="sEmailProf" size="30" maxlength="40"

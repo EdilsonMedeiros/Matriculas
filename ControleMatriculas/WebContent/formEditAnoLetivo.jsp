@@ -47,10 +47,10 @@
 						<form action="editAnoLetivo.jsp" method="get">
 							<input type="hidden" name="id" value="<%=periodo.getId()%>" /><br />
 							<label for="sInicio">Data de Início</label> <input type="date"
-								name="cInicio" id="sInicio"
+								name="cInicio" data-mask="00/00/0000"
 								value="<%=fd.format(periodo.getDataInicio())%>" /><br /> <label
 								for="sFim">Data de Término</label> <input type="date"
-								name="cFim" id="sFim"
+								name="cFim" data-mask="00/00/0000"
 								value="<%=fd.format(periodo.getDataFim())%>" /><br />
 							<button class="acoes" type="submit"><img alt="salvar" src="_imagens/083-floppy-disk.png"> </button>
 							<a href="outputAnoLetivo.jsp"><button class="acoes" type="button"><img alt="cancelar" src="_imagens/cancel.png"></button></a>
